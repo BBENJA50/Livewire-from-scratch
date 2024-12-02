@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Greeting;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -12,6 +13,7 @@ class Greeter extends Component
 
     public $name = '';
     public $greeting = '';
+    public $greetings = [];
     public $greetingMessage = "";
 
     public function changeGreeting()
@@ -30,6 +32,23 @@ class Greeter extends Component
     //     ];
     // }
 
+
+    public function mount()
+    {
+        $this->greetings = Greeting::all();
+    }
+
+    public function updated($property, $value)
+    {
+        // if ($property === 'name') {
+        //     $this->name = strtolower($value);
+        // }
+    }
+
+    public function updatedName($name)
+    {
+        $this->name = strtolower($name);
+    }
 
     public function render()
     {
