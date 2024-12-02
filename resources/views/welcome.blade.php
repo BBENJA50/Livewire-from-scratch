@@ -35,7 +35,7 @@
                 </header>
 
                 <main class="mt-6">
-                    <livewire:greeter></livewire:greeter>
+                    <livewire:search></livewire:search>
                 </main>
 
             </div>
